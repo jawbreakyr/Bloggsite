@@ -1,1 +1,45 @@
-<h1>Hi Django Bitch</h1>
+{% load thumbnail %}
+
+
+
+<div class="span3">
+	<h4>Death Metal</h4>
+
+	{% for article in death_metal_articles %}
+		<article>
+			<img src="{% thumbnail article.image 200x150 crop='center' %}"/>
+			<h5><a href="/death-metal/{{ article.id }}/{{ article.slug }}">{{ article.title }}</a></h5>
+			<small>
+				by {{ article.author }} on {{ article.published_date }}
+			</small>
+			{{ article.body|truncatewords:'15'|linebreaks }}
+		</article>
+	{% endfor %}
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{# <h1>Hi Django Bitch</h1> #}
+
+{# <div>{{ death_metal_article }}</div> #}
+{# <div>{{ trash_metal_article }}</div> #}
+{# <div>{{ grind_core_article }}</div> #}

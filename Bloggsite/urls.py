@@ -1,7 +1,10 @@
 from django.conf.urls import patterns, include, url
-from articles import views
 from django.contrib import admin
+from django.conf import settings
+from django.conf.urls.static import static
 admin.autodiscover()
+
+from articles import views
 
 urlpatterns = patterns('',
     # Examples:
@@ -10,4 +13,4 @@ urlpatterns = patterns('',
 
     url(r'^admin/', include(admin.site.urls)),
     url(r'^$', views.home),
-)
+)  + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
