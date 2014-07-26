@@ -13,4 +13,7 @@ urlpatterns = patterns('',
 
     url(r'^admin/', include(admin.site.urls)),
     url(r'^$', views.home),
+    url(r'^index/$', views.index, name='index'),
+    url(r'^(?P<category_slug>[-\w]+)/$', views.category),
+    url(r'^(?P<category_slug>[-\w]+)/(?P<article_id>\d+)/([-\w]+)/$', views.article)
 )  + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

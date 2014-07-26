@@ -1,4 +1,5 @@
 <!doctype html>
+{% load thumbnail %}
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9" lang="en"> <![endif]-->
@@ -45,12 +46,12 @@
 		<!-- HEADER START -->
 		<div class="navbar">
 			<div class="navbar-inner">
-				<a href="/" class="brand">Surf Magazine</a>
+				<span class="brand">Metal Bloog</span>
 				<ul class="nav">
 					<li><a href="/">Home</a></li>
-					<li><a href="/surf-wire/">Surf Wire</a></li>
-					<li><a href="/gear/">Gear</a></li>
-					<li><a href="/world-tour/">World Tour</a></li>
+					<li><a href="/death-metal/">Death Metal</a></li>
+					<li><a href="/trash-metal/">Trash Metal</a></li>
+					<li><a href="/grind-core/">Grind Core</a></li>
 				</ul>
 			</div>
 		</div>
@@ -70,16 +71,14 @@
 
 						<!-- FULL ARTICLE -->
 						<div class="span9">
-							<h2>The Quick Brown Fox Jumped Over</h2>
-							<small>by Jon Danao on Feb. 11, 2013</small>
-
-							<div class="poster"><img src="/static/images/poster.jpg"></div>
-
-							<p>Intrinsicly reinvent open-source initiatives through cutting-edge information. Appropriately strategize holistic growth strategies and performance based strategic theme areas. Intrinsicly innovate accurate outsourcing without standards compliant information. Monotonectally reintermediate frictionless e-business with backend total linkage. Uniquely procrastinate resource maximizing potentialities before B2C channels.</p>
-
-							<p>Uniquely impact customer directed metrics whereas customized resources. Intrinsicly e-enable impactful best practices vis-a-vis global vortals. Continually engage magnetic technologies without high standards in expertise. Credibly engineer standardized convergence for excellent growth strategies. Assertively actualize granular human capital before robust models.</p>
-
-							<p>Quickly leverage other's magnetic strategic theme areas and 24/365 leadership skills. Enthusiastically productivate cross-media e-markets for client-centered strategic theme areas. Dramatically facilitate virtual processes vis-a-vis 2.0 expertise. Proactively procrastinate frictionless portals whereas B2B paradigms. Seamlessly orchestrate extensible opportunities through corporate solutions.</p>
+							<h2> {{ article.title }} </h2>
+							<small>by  {{ article.author }}  on  {{ article.published_date }} </small>
+							
+							<div class="poster">
+							
+								<img src=" {% thumbnail article.image 700x300 crop='center' upscale %} ">
+							</div>
+							{{ article.body|linebreaks }}
 						</div>
 						<!-- FULL ARTICLE -->
 

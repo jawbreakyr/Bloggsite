@@ -1,0 +1,20 @@
+.display {
+	margin-top: 80px;
+	margin-left: 180px;
+	margin-bottom: 250px;
+}
+
+.top {
+	margin-top: 0px;
+}
+
+h4 {
+	text-align: center;
+}
+
+hr {
+	margin-bottom: 3px;
+	border-color: #3B3B31;
+	border-style: double;
+	border-width: 5px;
+}

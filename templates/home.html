@@ -1,21 +1,30 @@
-{% load thumbnail %}
-
-
-
-<div class="span3">
-	<h4>Death Metal</h4>
-
-	{% for article in death_metal_articles %}
-		<article>
-			<img src="{% thumbnail article.image 200x150 crop='center' %}"/>
-			<h5><a href="/death-metal/{{ article.id }}/{{ article.slug }}">{{ article.title }}</a></h5>
-			<small>
-				by {{ article.author }} on {{ article.published_date }}
-			</small>
-			{{ article.body|truncatewords:'15'|linebreaks }}
-		</article>
-	{% endfor %}
-</div>
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" media="screen" href="/static/styles/bootstrap.css">
+	<link rel="stylesheet" media="screen" href="/static/styles/home.css">
+	<title>Home</title>
+</head>
+<body background="../static/images/back.jpg">
+	<div class="wrapper">
+		<div class="displayed">
+			<a href="/index/"><img class="display" src="../static/images/burning.gif"/></a>
+		</div>
+		<hr>
+		<div>
+			<h4 class="top">Who ever appeal's to the law of his fellow man is either a fool or a coward.</h4>
+			<h4>Who ever cannot take care of himself without that law is both.</h4>
+			<h4>For a wounded man shall say to his assailant,</h4>
+			<h4>if live i will kill you if i die you are forgiven. </h4>
+			<h4>Such is a rule of HONOR.</h4>
+		</div>
+	</div>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+	<script>window.jQuery || document.write('<script src="/static/scripts/jquery-1.8.2.min.js"><\/script>')</script>
+	<script type="text/javascript" src="/static/scripts/bootstrap.js"></script>
+	<script type="text/javascript" src="/static/scripts/master.js"></script>
+</body>
+</html>
 
 
 

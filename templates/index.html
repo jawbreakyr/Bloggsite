@@ -1,4 +1,6 @@
 <!doctype html>
+{% load staticfiles %}
+{% load thumbnail %}
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9" lang="en"> <![endif]-->
@@ -45,12 +47,12 @@
 		<!-- HEADER START -->
 		<div class="navbar">
 			<div class="navbar-inner">
-				<a href="/" class="brand">Surf Magazine</a>
+				<span class="brand">Metal Blogg</span>
 				<ul class="nav">
 					<li><a href="/">Home</a></li>
-					<li><a href="/surf-wire/">Surf Wire</a></li>
-					<li><a href="/gear/">Gear</a></li>
-					<li><a href="/world-tour/">World Tour</a></li>
+					<li><a href="/death-metal/">Death Metal</a></li>
+					<li><a href="/trash-metal/">Trash Metal</a></li>
+					<li><a href="/grind-core/">Grind Core</a></li>
 				</ul>
 			</div>
 		</div>
@@ -68,7 +70,7 @@
 					<!-- CAROUSEL -->
 					<div class="row">
 						<div class="span9 poster">
-							<img src="/static/images/poster.jpg">							
+							<img src="/static/images/tratra.jpg">							
 						</div>
 					</div>
 					<!-- CAROUSEL -->
@@ -78,76 +80,67 @@
 
 						<!-- CATEGORY -->
 						<div class="span3">
-							<h4>Surf Wire</h4>
+							<h4>Death Metal</h4>
 
-							<article>
-								<img src="/static/images/img_portrait.jpg">
-								<h5><a href="#">The Quick Brown Fox</a></h5>
-								<small>by Admin on Jan. 3, 2013</small>
-								<p>Energistically pursue multifunctional processes whereas next-generation processes. Compellingly procrastinate 24/365 schemas through stand-alone schemas.</p>
-							</article>
-							<article>
-								<img src="/static/images/img_landscape.jpg">
-								<h5><a href="#">The Quick Brown Fox</a></h5>
-								<small>by Admin on Jan. 3, 2013</small>
-								<p>Energistically pursue multifunctional processes whereas next-generation processes. Compellingly procrastinate 24/365 schemas through stand-alone schemas.</p>
-							</article>
-							<article>
-								<img src="/static/images/img_landscape.jpg">
-								<h5><a href="#">The Quick Brown Fox</a></h5>
-								<small>by Admin on Jan. 3, 2013</small>
-								<p>Energistically pursue multifunctional processes whereas next-generation processes. Compellingly procrastinate 24/365 schemas through stand-alone schemas.</p>
-							</article>
+							{% for article in articles %}
+							  	<article>
+							    	<img src="../media/image/death1.jpg" align="left">
+							    	
+							    	<h5><a href=" /{{ article.category.slug }}/{{ article.id }}/{{ article.slug}}">
+							    		{{ article.title }} </a></h5>
+							        
+							        <small>
+										by  {{ article.author }}  on
+							    			{{ article.published_date }}
+							    	</small>
+							     	{{ article.body|truncatewords:'30'|linebreaks }}
+							  
+							  	</article>
+							{% endfor %}
 						</div>
 						<!-- CATEGORY -->
 
 						<!-- CATEGORY -->
 						<div class="span3">
-							<h4>Gear</h4>
+							<h4>Trash Metal</h4>
 
-							<article>
-								<img src="/static/images/img_landscape.jpg">
-								<h5><a href="#">The Quick Brown Fox</a></h5>
-								<small>by Admin on Jan. 3, 2013</small>
-								<p>Energistically pursue multifunctional processes whereas next-generation processes. Compellingly procrastinate 24/365 schemas through stand-alone schemas.</p>
-							</article>
-							<article>
-								<img src="/static/images/img_landscape.jpg">
-								<h5><a href="#">The Quick Brown Fox</a></h5>
-								<small>by Admin on Jan. 3, 2013</small>
-								<p>Energistically pursue multifunctional processes whereas next-generation processes. Compellingly procrastinate 24/365 schemas through stand-alone schemas.</p>
-							</article>
-							<article>
-								<img src="/static/images/img_landscape.jpg">
-								<h5><a href="#">The Quick Brown Fox</a></h5>
-								<small>by Admin on Jan. 3, 2013</small>
-								<p>Energistically pursue multifunctional processes whereas next-generation processes. Compellingly procrastinate 24/365 schemas through stand-alone schemas.</p>
-							</article>
+							{% for article in articles %}
+							  	<article>
+							    	<img src="../media/image/death1.jpg" align="left">
+							    	
+							    	<h5><a href=" /{{ article.category.slug }}/{{ article.id }}/{{ article.slug}}">
+							    		{{ article.title }} </a></h5>
+							        
+							        <small>
+										by  {{ article.author }}  on
+							    			{{ article.published_date }}
+							    	</small>
+							     	{{ article.body|truncatewords:'30'|linebreaks }}
+							  
+							  	</article>
+							{% endfor %}
 						</div>
 						<!-- CATEGORY -->
 
 						<!-- CATEGORY -->
 						<div class="span3">
-							<h4>World Tour</h4>
+							<h4>Grind Core</h4>
 
-							<article>
-								<img src="/static/images/img_landscape.jpg">
-								<h5><a href="#">The Quick Brown Fox</a></h5>
-								<small>by Admin on Jan. 3, 2013</small>
-								<p>Energistically pursue multifunctional processes whereas next-generation processes. Compellingly procrastinate 24/365 schemas through stand-alone schemas.</p>
-							</article>
-							<article>
-								<img src="/static/images/img_portrait.jpg">
-								<h5><a href="#">The Quick Brown Fox</a></h5>
-								<small>by Admin on Jan. 3, 2013</small>
-								<p>Energistically pursue multifunctional processes whereas next-generation processes. Compellingly procrastinate 24/365 schemas through stand-alone schemas.</p>
-							</article>
-							<article>
-								<img src="/static/images/img_landscape.jpg">
-								<h5><a href="#">The Quick Brown Fox</a></h5>
-								<small>by Admin on Jan. 3, 2013</small>
-								<p>Energistically pursue multifunctional processes whereas next-generation processes. Compellingly procrastinate 24/365 schemas through stand-alone schemas.</p>
-							</article>
+							{% for article in articles %}
+							  	<article>
+							    	<img src="../media/image/death1.jpg" align="left">
+							    	
+							    	<h5><a href=" /{{ article.category.slug }}/{{ article.id }}/{{ article.slug}}">
+							    		{{ article.title }} </a></h5>
+							        
+							        <small>
+										by  {{ article.author }}  on
+							    			{{ article.published_date }}
+							    	</small>
+							     	{{ article.body|truncatewords:'30'|linebreaks }}
+							  
+							  	</article>
+							{% endfor %}
 						</div>
 						<!-- CATEGORY -->
 
@@ -162,55 +155,55 @@
 					<h4>Featured Surfers</h4>
 
 					<article>
-						<img src="/static/images/avatar_01.jpg" align="left">
+						<img src="/static/images/cobain.jpg" align="left">
 						<a href="#" class="surfer-name">Kelly Slater</a><br />
 						<span class="surfer-country">United States</span>
 					</article>
 
 					<article>
-						<img src="/static/images/avatar_02.jpg" align="left">
+						<img src="/static/images/dimebag.jpg" align="left">
 						<a href="#" class="surfer-name">Joel Parkinson</a><br />
 						<span class="surfer-country">Australia</span>
 					</article>
 
 					<article>
-						<img src="/static/images/avatar_01.jpg" align="left">
+						<img src="/static/images/cobain.jpg" align="left">
 						<a href="#" class="surfer-name">Kelly Slater</a><br />
 						<span class="surfer-country">United States</span>
 					</article>
 
 					<article>
-						<img src="/static/images/avatar_02.jpg" align="left">
+						<img src="/static/images/dimebag.jpg" align="left">
 						<a href="#" class="surfer-name">Joel Parkinson</a><br />
 						<span class="surfer-country">Australia</span>
 					</article>
 
 					<article>
-						<img src="/static/images/avatar_01.jpg" align="left">
+						<img src="/static/images/cobain.jpg" align="left">
 						<a href="#" class="surfer-name">Kelly Slater</a><br />
 						<span class="surfer-country">United States</span>
 					</article>
 
 					<article>
-						<img src="/static/images/avatar_02.jpg" align="left">
+						<img src="/static/images/dimebag.jpg" align="left">
 						<a href="#" class="surfer-name">Joel Parkinson</a><br />
 						<span class="surfer-country">Australia</span>
 					</article>
 
 					<article>
-						<img src="/static/images/avatar_01.jpg" align="left">
+						<img src="/static/images/cobain.jpg" align="left">
 						<a href="#" class="surfer-name">Kelly Slater</a><br />
 						<span class="surfer-country">United States</span>
 					</article>
 
 					<article>
-						<img src="/static/images/avatar_02.jpg" align="left">
+						<img src="/static/images/dimebag.jpg" align="left">
 						<a href="#" class="surfer-name">Joel Parkinson</a><br />
 						<span class="surfer-country">Australia</span>
 					</article>
 
 					<article>
-						<img src="/static/images/avatar_01.jpg" align="left">
+						<img src="/static/images/cobain.jpg" align="left">
 						<a href="#" class="surfer-name">Kelly Slater</a><br />
 						<span class="surfer-country">United States</span>
 					</article>					
